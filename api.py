@@ -28,8 +28,8 @@ class Player(Resource):
         result = Players.query.filter_by(name=name).first()
         return result
 
-api.add_resource(Player, "/v1/<string:name>")
+api.add_resource(Player, "/<string:name>")
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=6767)
+    app.run(host='0.0.0.0')
